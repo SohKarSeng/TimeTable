@@ -1,9 +1,0 @@
-TimeTable
-ACE
-LAC
-Days/Time   |******9 -11******|******11- 1******|=====|******2 - 4******|******4 - 6******|
-Monday      |        |        |        |        |=====|        |        |        |        |
-Tuesday     |       ACE       |       LAC       |=====|        |        |       ACE       |
-Wednesday   |        |        |       ACE       |=====|        |        |        |        |
-Thursday    |        |        |        |        |=====|        |        |       ACE       |
-Friday      |        |        |        |        |=====|        |        |        |        |
