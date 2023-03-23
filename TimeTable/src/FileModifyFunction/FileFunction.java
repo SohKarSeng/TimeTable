@@ -103,7 +103,7 @@ public class FileFunction {
         }
     }
 
-    public void timeTableContentChanging(String fileName, String days, String data){
+    /*public void timeTableContentChanging(String fileName, String days, String data){
         int lineNumToChange = 0;
         try {
             // Read the contents of the file into a string array
@@ -135,5 +135,5 @@ public class FileFunction {
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-    }
+    }*/
 }

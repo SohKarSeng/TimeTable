@@ -1,7 +1,6 @@
-TimeTable
 Time \ date   |9      |10     |11     |12     |13     |14     |15     |16     |17     |
-Monday        |  ACE  |  ACE  |       |       |=======|       |       |       |       |
-Tuesday       |       |       |       |       |=======|       |       |       |       |
+Monday        |       |       |  SS   |  SS   |=======|       |       |  C++  |  C++  |
+Tuesday       |  ACE  |  ACE  |  LAC  |  LAC  |=======|       |       |  ACE  |  ACE  |
 Wednesday     |       |       |       |       |=======|       |       |       |       |
-Thursday      |       |       |       |       |=======|       |       |       |       |
-Friday        |       |       |       |       |=======|       |       |       |       |
+Thursday      |  C++  |  C++  |  SS   |  SS   |=======|       |       |       |       |
+Friday        |       |       |  HCI  |  HCI  |=======|       |       |       |       |

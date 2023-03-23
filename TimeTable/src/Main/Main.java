@@ -4,7 +4,6 @@ import FileModifyFunction.FileFunction;
 import FileModifyFunction.TimetableFileWriting;
 import Interface.UserInterface;
 import TimeTable.Timetable;
-
 import java.util.Scanner;
 
 
@@ -22,13 +21,13 @@ public class Main {
         String fileName;
 
         while (i!=10) {
-            if (i == 0 || i == 1 || i == 2 || i == 3 || i == 4 || i == 6) {
+            if (i >= 0 && i<=5) {
                 UI.actionSelectionInterface1();
             }
             else {
                 UI.actionSelectionInterface2();
             }
-            i = nscanner.nextInt();
+                i = nscanner.nextInt();
 
             switch (i) {
                 case 1 -> {
@@ -64,26 +63,12 @@ public class Main {
                 }//case 4 -END
 
                 case 5 ->
-                    System.out.println("The system will now display the TimeTable related interface.");
+                        System.out.println("The system will now display the Files related interface.");
 
                 case 6 ->
-                    System.out.println("The system will now display the Files related interface.");
+                        System.out.println("The system will now display the TimeTable related interface.");
 
                 case 7 -> {
-                    System.out.print("Enter the File Name u want to add the subject to [xxx.txt]: ");
-                    fileName = sscanner.nextLine();
-                    String subjectName;
-                    System.out.print("Please Enter The Number Of The Subjects: ");
-                    int subjectNumber = nscanner.nextInt();
-                    System.out.println("Please Enter The Name Of The Subjects: ");
-                    FileFunction FF = new FileFunction();
-                    for (int j = 0; j < subjectNumber; j++) {
-                        subjectName = sscanner.nextLine();
-                        FF.fileAppending(fileName, subjectName);
-                    }//for loop - END
-                }//case 7 - END
-
-                case 8 -> {
                     System.out.println("Enter the Time and dat you would like to add to the timetable:");
                     System.out.print("Subject: ");
                     String subject = sscanner.nextLine();
@@ -98,6 +83,66 @@ public class Main {
                         System.out.print("Continue? [0/1]: ");
                         j = nscanner.nextInt();
                     }
+                }//case 7 - END
+
+                case 8 -> {
+                    System.out.print("Select which day of the TimeTable to modify: ");
+                    String days = sscanner.nextLine();
+                    System.out.print("Subject: ");
+                    String subject = sscanner.nextLine();
+                    int j = 1;
+                    while (j != 0) {
+                        switch (days) {
+                            case "Monday" -> {
+                                int day = 1;
+                                System.out.print("Time: ");
+                                int time = nscanner.nextInt();
+                                TT.addSubjectToTimeTable(day, time, subject);
+                                System.out.print("Continue? [0/1]: ");
+                                j = nscanner.nextInt();
+                            }
+                            case "Tuesday" -> {
+                                int day = 2;
+                                System.out.print("Time: ");
+                                int time = nscanner.nextInt();
+                                TT.addSubjectToTimeTable(day, time, subject);
+                                System.out.print("Continue? [0/1]: ");
+                                j = nscanner.nextInt();
+                            }
+                            case "Wednesday" -> {
+                                int day = 3;
+                                System.out.print("Time: ");
+                                int time = nscanner.nextInt();
+                                TT.addSubjectToTimeTable(day, time, subject);
+                                System.out.print("Continue? [0/1]: ");
+                                j = nscanner.nextInt();
+                            }
+                            case "Thursday" -> {
+                                int day = 4;
+                                System.out.print("Time: ");
+                                int time = nscanner.nextInt();
+                                TT.addSubjectToTimeTable(day, time, subject);
+                                System.out.print("Continue? [0/1]: ");
+                                j = nscanner.nextInt();
+                            }
+                            case "Friday" -> {
+                                int day = 5;
+                                System.out.print("Time: ");
+                                int time = nscanner.nextInt();
+                                TT.addSubjectToTimeTable(day, time, subject);
+                                System.out.print("Continue? [0/1]: ");
+                                j = nscanner.nextInt();
+                            }
+                            default -> {
+                                System.out.println("Invalid input, please try again");
+                                days = sscanner.nextLine();
+                            }
+                        }//switch case - End
+                    }//while case - End
+                    System.out.print("Which file do you wish to store the timetable to? [xxx.txt]: ");
+                    fileName = sscanner.nextLine();
+                    TimetableFileWriting TF = new TimetableFileWriting();
+                    TF.timeTableFileAddingSingleLine(days, fileName);
                 }//case 8 - END
 
                 case 9 -> {
@@ -107,7 +152,7 @@ public class Main {
                     fileName = sscanner.nextLine();
                     TimetableFileWriting TF = new TimetableFileWriting();
                     TF.timeTableFileAdding(fileName);
-                }
+                }//case 9 - END
 
             }//switch case
 
